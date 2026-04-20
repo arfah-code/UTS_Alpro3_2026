@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -5,17 +6,7 @@ using namespace std;
 int main() {
     int n;
     string s;
-
-    cout << "Masukkan jumlah babak: ";
-    cin >> n;
-
-    cout << "Masukkan hasil (A/B/C tanpa spasi): ";
-    cin >> s;
-
-    if (s.length() != n) {
-        cout << "Input tidak sesuai jumlah babak!" << endl;
-        return 0;
-    }
+    cin >> n >> s;
 
     int poinA = 0, poinB = 0;
     int streakA = 0, streakB = 0;
@@ -31,8 +22,7 @@ int main() {
                 poinA += 2;
                 streakA = 0;
             }
-        } 
-        else if (babak == 'B') {
+        } else if (babak == 'B') {
             poinB += 3;
             streakB++;
             streakA = 0;
@@ -40,16 +30,11 @@ int main() {
                 poinB += 2;
                 streakB = 0;
             }
-        } 
-        else if (babak == 'C') {
+        } else {
             poinA += 1;
             poinB += 1;
             streakA = 0;
             streakB = 0;
-        } 
-        else {
-            cout << "Input tidak valid!" << endl;
-            return 0;
         }
     }
 
@@ -65,9 +50,7 @@ int main() {
 
     return 0;
 }
-
     /*
-    LANGKAH-LANGKAH PENYELESAIAN:
 
     1. INPUT
        - Baca N (jumlah babak)
